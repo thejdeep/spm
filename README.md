@@ -6,6 +6,7 @@ A tiny package manager
 $ git clone https://github.com/thejdeep/spm.git
 $ cd spm/
 $ sudo cp spm /bin/
+$ sudo chmod +x /bin/spm
 $ sudo cp install.py ~/.
 ```
 Sorry for this lame way of installation. Will surely package this when I find time.
