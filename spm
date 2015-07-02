@@ -1,0 +1,70 @@
+#!/bin/bash
+
+if [ "$#" -eq 0 ] ; then
+	echo "-------------------------------------------------"
+	echo "                       SPM              "
+	echo "-------------------------------------------------"
+	echo ""
+	echo "USAGE :"
+	echo "-------"
+	echo "spm install <pkg_name> = Install a package"
+	echo "spm remove <pkg_name> = Remove a package"
+	echo "spm check <pkg_name> = Check if package is installed"
+	echo "spm list = List all installed packages"
+	echo ""
+else
+if [ "$#" -eq 2 ] && [ "$1" == "install" ] ; then
+	echo ""
+	echo "SPM"
+	echo ""
+	echo "-----------------"
+	echo "Install operation"
+	echo "-----------------"
+	echo `python /home/thejdeep/install.py $1 $2`
+else
+	echo ""
+	echo "Correct Usage : spm install <pkg_name>"
+	echo ""
+fi
+if [ "$#" -eq 2 ] && [ "$1" == "remove" ] ; then
+        echo ""
+        echo "SPM"
+        echo ""
+        echo "-----------------"
+        echo "Remove operation"
+        echo "-----------------"
+        echo `python /home/thejdeep/install.py $1 $2`
+else
+        echo ""
+        echo "Correct Usage : spm remove <pkg_name>"
+        echo ""
+fi
+if [ "$#" -eq 1 ] && [ "$1" == "list" ] ; then
+        echo ""
+        echo "SPM"
+        echo ""
+        echo "-----------------"
+        echo "List operation"
+        echo "-----------------"
+        echo `python /home/thejdeep/install.py $1`
+else
+        echo ""
+        echo "Correct Usage : spm remove <pkg_name>"
+        echo ""
+fi
+
+if [ "$#" -eq 2 ] && [ "$1" == "check" ] ; then
+        echo ""
+        echo "SPM"
+        echo ""
+        echo "-----------------"
+        echo "Check operation"
+        echo "-----------------"
+        echo `python /home/thejdeep/install.py $1 $2`
+else
+        echo ""
+        echo "Correct Usage : spm check <pkg_name>"
+        echo ""
+fi
+
+fi
