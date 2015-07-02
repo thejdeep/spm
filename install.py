@@ -12,11 +12,6 @@ op_name=sys.argv[1]
 if sys.argv[1] != "list":
 	pkg_name = sys.argv[2]
 
-# VM Configurations
-home_dir = '/home/thejdeep'
-ip_vm = ['192.168.239.161','192.168.239.162']
-vm_username = 'thejdeep'
-
 # Librepo Configurations
 MAIN_REPO = "/home/thejdeep/test_repo/"
 DESTDIR = "/home/thejdeep/test_repo/repodata/"
@@ -34,30 +29,6 @@ sack.load_repo(repo,load_filelists=True)
 #sack.load_system_repo()
 
 # Functions start
-def unique(source):
-        sofar = {}
-        for val in open(source):
-                if not sofar.get(val):
-                        yield val.strip()
-                        sofar[val]=1
-
-def print_unique():
-        with open(os.path.join(home_dir,'arch_list_unique'),"w") as outp:
-                for lyne in unique(os.path.join(home_dir,'arch_list')):
-                        outp.write(lyne)
-                        outp.write('\n')
-                os.remove(os.path.join(home_dir,'arch_list'))
-
-
-def get_arch():
-        global ip_vm
-        for i in ip_vm:
-                proxy = xmlrpclib.ServerProxy("http://"+i+":9000")
-                archs = proxy.exec_cmd('uname -p')
-                with open(os.path.join(home_dir,'arch_list'),"a+") as outpfile:
-                        outpfile.write(archs)
-        print "Saving only unique archs"
-        print_unique()
 
 def callback(data, total_to_download, downloaded):
     """Progress callback"""
