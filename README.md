@@ -1,5 +1,5 @@
 # spm
-A tiny package manager
+A tiny package manager. More info <a href="http://localhost:4000/blog/2015/07/02/building-a-package-manager/" target="_blank">here</a>
 
 ## Install
 ```
